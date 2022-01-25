@@ -14,10 +14,16 @@
 #'
 #' @examples
 #'
-#'
+create_tsc <- function(){
+  reticulate::py_get_attr(NewsSentiment_p,TargetSentimentClassifier())
+}
+
 
 #' @export
 infer<- function(left, target, right) {
+  #reticulate::py_load_object("tsc.pickle")
+  tsc <-  pack$tsc
   tsc$infer_from_text(left, target, right)
+
 }
 
