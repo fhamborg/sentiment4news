@@ -2,13 +2,26 @@ Package: NewsSentiment
 Title: Target-dependent Sentiment Classification
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: easy-to-use, high-quality target-dependent sentiment classification for news articles.
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+    person("Felix", "Hamborg", , "Felix.Hamborg@uni-konstanz.de",  
+    role = c("aut", "cre"),
+    comment = c(ORCID = "0000-0003-2444-8056"))
+Description: 
+    NewsSentiment is an easy-to-use R Package that achieves 
+    state-of-the-art performance for target-dependent sentiment classification
+    on news articles. NewsSentiment uses the currently best performing 
+    targeted sentiment classifier for news articles. 
+    In contrast to regular sentiment classification, targeted sentiment 
+    classification allows you to provide a target in a sentence. 
+    Only for this target, the sentiment is then predicted. 
+    This is more reliable in many cases, as demonstrated by the following 
+    simplistic example: "I like Bert, but I hate Robert."
+License: use_gpl3_license()
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
-#Imports:
- # reticulate
+Imports:
+  reticulate
+Suggests: 
+    rmarkdown,
+    knitr
+VignetteBuilder: knitr

@@ -1,0 +1,52 @@
+---
+title: "NewsSentiment"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{my-vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+NewsSentiment is an easy-to-use Python library that achieves state-of-the-art 
+performance for target-dependent sentiment classification on news articles. 
+NewsSentiment uses the currently best performing targeted sentiment classifier 
+for news articles. In contrast to regular sentiment classification, targeted 
+sentiment classification allows you to provide a target in a sentence. Only for 
+this target, the sentiment is then predicted. This is more reliable in many 
+cases, as demonstrated by the following simplistic example: "I like Bert, 
+but I hate Robert."
+
+We designed NewsSentiment to serve as an easy-to-use wrapper around the
+sophisticated GRU-TSC model, which was trained on the NewsMTSC dataset 
+consisting of more than 10k labeled sentences sampled from political news 
+articles. More information on the dataset and the model can be found here. 
+The dataset, the model, and its source code can be viewed in our GitHub 
+repository.
+
+# Installation
+
+During the installation process. Python in the version 3.7.9 will be 
+downloaded onto your computer. This is necessary since the python package
+that NewsSentiment is based on requires a virtual enviroment using python 
+3.7.
+
+```{r setup}
+library(NewsSentiment)
+```
+# Target-dependent Sentiment Classification
+
+Note that using NewsSentiment the first time will take a few minutes because it 
+needs to download the fine-tuned language model. Please do not abort this 
+initial download. Since this is a one-time process, future use of NewsSentiment
+will be much faster.
+```{r}
+#sentiment <- infer_from_text("I like ", "Peter", " but I don't like Robert.")
+#print(sentiment[0])
+```
+
