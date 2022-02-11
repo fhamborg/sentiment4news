@@ -5,9 +5,6 @@
 \title{Infer by Index}
 \usage{
 infer_by_index(
-  text_left = NULL,
-  target_mention = NULL,
-  text_right = NULL,
   text = NULL,
   target_mention_from = NULL,
   target_mention_to = NULL
@@ -21,8 +18,11 @@ infer_by_index(
 \item{target_mention_to}{End Index of Target.}
 }
 \value{
-
+the sentiment
 }
 \description{
 Infer by Index
+}
+\examples{
+print(sentiment[0])
 }

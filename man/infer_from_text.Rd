@@ -2,7 +2,7 @@
 % Please edit documentation in R/infer_from_text.R
 \name{infer_from_text}
 \alias{infer_from_text}
-\title{infer_from_text}
+\title{infer from text with target}
 \usage{
 infer_from_text(left = NULL, target = NULL, right = NULL)
 }
@@ -10,19 +10,20 @@ infer_from_text(left = NULL, target = NULL, right = NULL)
 \item{left}{The text from the beginning of the sentence to the mention of the
 target (will be empty if the sentence starts with the mention of the target).
 Make sure to include a space if there is one between the left phrase and the
-target mention, e.g., "I like Peter." -> left="I like ", target="Peter", right=".".""}
+target mention, e.g., "I like Peter." -> left="I like ", target="Peter",
+right=".".""}
 
 \item{target}{The mention of the target.}
 
 \item{right}{The text from the end of the target to the end of the sentence.
-Make sure to include a space if there is one between the target and the next word
-of the sentence.}
+Make sure to include a space if there is one between the target and the next
+word of the sentence.}
 }
 \value{
-
+the sentiment
 }
 \description{
-infer_from_text
+infer from text with target
 }
 \examples{
 sentiment <- infer_from_text("I like ", "Peter", " but I don't like Robert.")
