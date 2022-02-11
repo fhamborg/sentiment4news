@@ -1,4 +1,4 @@
-#' infer_from_text
+#' infer from text with target
 #'
 #' @param left The text from the beginning of the sentence to the mention of the
 #' target (will be empty if the sentence starts with the mention of the target).
@@ -10,7 +10,7 @@
 #' Make sure to include a space if there is one between the target and the next
 #' word of the sentence.
 #'
-#' @return
+#' @return the sentiment
 #' @export
 #'
 #' @examples
@@ -18,7 +18,6 @@
 #' print(sentiment[0])
 infer_from_text <- function(left = NULL, target = NULL, right = NULL) {
   reticulate::use_virtualenv("newssentiment-environment")
-  tsc <- reticulate::import("NewsSentiment.TargetSentimentClassifier")
   tsc$infer_from_text(left, target, right)
 }
 
@@ -28,16 +27,35 @@ infer_from_text <- function(left = NULL, target = NULL, right = NULL) {
 #' @param target_mention_from Beginning Index of Target.
 #' @param target_mention_to End Index of Target.
 #'
-#' @return
+#' @return the sentiment
 #' @export
 #'
 #' @examples
-#'
-infer_by_index <- function(text_left = NULL,
-                           target_mention = NULL,
-                           text_right = NULL,
+#sentiment <- infer_by_index("I like Peter but I don't like Robert.", 7,11)
+#' print(sentiment[0])
+infer_by_index <- function(
                            text = NULL,
                            target_mention_from = NULL,
                            target_mention_to = NULL) {
-  tsc$infer(text, target_mention_from, target_mention_to)
+  text_left = substr(text, 0, (target_mention_from-1))
+  target_mention= substr(text, target_mention_from, target_mention_to)
+  text_right= substr(text, (target_mention_to+1), nchar(text))
+  tsc$infer(text_left, target_mention, text_right )
+}
+
+
+#' Infer without target. \n
+#' Get the sentence Sentiment without an target mention.
+#' This function is provided for convenience but the model was not
+#' trained for this.
+#'
+#' @param text the sentence
+#'
+#' @return the sentiment
+#' @export
+#'
+#' @examples
+#' infer("I like Peter")
+infer <- function(text=NULL){
+  tsc$infer("",text,"")
 }
