@@ -1,6 +1,6 @@
 Package: NewsSentiment
 Title: Target-dependent Sentiment Classification
-Version: 0.0.0.9000
+Version: 0.1.0.000
 Authors@R: 
     person("Felix", "Hamborg", , "Felix.Hamborg@uni-konstanz.de",  
     role = c("aut", "cre"),
@@ -22,6 +22,8 @@ Note: The R package is build on the python package NewsMTSC. More information
     and  high-quality data set of over 11k sentences and a state-of-the-art 
     classification model can be found here:
     https://github.com/fhamborg/NewsMTSC
+    If you use the dataset or model, please cite our paper:
+    https://aclanthology.org/2021.eacl-main.142/
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
 Imports:

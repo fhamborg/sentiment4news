@@ -10,7 +10,8 @@
 #' Make sure to include a space if there is one between the target and the next
 #' word of the sentence.
 #'
-#' @return the sentiment
+#' @return sentiment of the sentence concerning the target's mention
+#' (-1 = negative, 0 = neutral, 1 = positive)
 #' @export
 #'
 #' @examples
@@ -27,7 +28,8 @@ infer_from_text <- function(left = NULL, target = NULL, right = NULL) {
 #' @param target_mention_from Beginning Index of Target.
 #' @param target_mention_to End Index of Target.
 #'
-#' @return the sentiment
+#' @return sentiment of the sentence concerning the target's mention
+#' (-1 = negative, 0 = neutral, 1 = positive)
 #' @export
 #'
 #' @examples
@@ -44,14 +46,16 @@ infer_by_index <- function(
 }
 
 
-#' Infer without target. \n
+#' Infer without target.
 #' Get the sentence Sentiment without an target mention.
 #' This function is provided for convenience but the model was not
 #' trained for this.
 #'
 #' @param text the sentence
 #'
-#' @return the sentiment
+#' @return sentiment of the sentence concerning the target's mention
+#' (-1 = negative, 0 = neutral, 1 = positive)
+#'
 #' @export
 #'
 #' @examples
