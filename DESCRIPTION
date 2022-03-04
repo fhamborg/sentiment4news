@@ -27,7 +27,8 @@ Note: The R package is build on the python package NewsMTSC. More information
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
 Imports:
-  reticulate
+  reticulate,
+  base
 Suggests: 
     rmarkdown,
     knitr
