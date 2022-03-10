@@ -13,7 +13,7 @@ NewsSentiment <- NULL
   #  system("/opt/homebrew/bin/brew install openblas")
   # system('OPENBLAS="$(brew --prefix openblas)" pip install numpy scipy')
   #}
-
+  Sys.unsetenv("RETICULATE_PYTHON")
   version <- "3.7.9"
   reticulate::install_python(version = version)
   reticulate::virtualenv_create("newssentiment-environment", version = version, packages = "NewsSentiment")
