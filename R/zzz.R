@@ -9,10 +9,10 @@ NewsSentiment <- NULL
                         The first installation might take a couple of minutes.
                         But further uses of the package will be much faster.")
 
-  if(Sys.info()["sysname"]== "Darwin"){
-    system("/opt/homebrew/bin/brew install openblas")
-    system('OPENBLAS="$(brew --prefix openblas)" pip install numpy scipy')
-  }
+  #if(Sys.info()["sysname"]== "Darwin"){
+  #  system("/opt/homebrew/bin/brew install openblas")
+  # system('OPENBLAS="$(brew --prefix openblas)" pip install numpy scipy')
+  #}
 
   version <- "3.7.9"
   reticulate::install_python(version = version)
