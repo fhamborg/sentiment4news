@@ -10,8 +10,8 @@ NewsSentiment <- NULL
                         But further uses of the package will be much faster.")
 
   if(Sys.info()["sysname"]== "Darwin"){
-    shell("brew install openblas")
-    shell('OPENBLAS="$(brew --prefix openblas)" pip install numpy scipy')
+    system("/opt/homebrew/bin/brew install openblas")
+    system('OPENBLAS="$(brew --prefix openblas)" pip install numpy scipy')
   }
 
   version <- "3.7.9"
